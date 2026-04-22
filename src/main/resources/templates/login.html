@@ -7,14 +7,18 @@
 
     <title>Login - Sistema de Biblioteca </title>
 
+    <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 <body>
     <main>
         <section id="login">
-            <div id="formulario">
+            <div id="acima_formulario">
                 <h1> Acesso ao Sistema </h1>
                 <h3 th:text="${mensagem}"></h3>
-
+            </div>
+            <div id="formulario">
                 <form action="/login" method="post">
 
                     <div class="campo_form">
