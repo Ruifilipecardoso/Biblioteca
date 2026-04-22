@@ -2,40 +2,38 @@
 <html lang="pt" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Sistema de Biblioteca </title>
+
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+
+    <title>Login - Sistema de Biblioteca </title>
+
 </head>
 <body>
+    <main>
+        <section id="login">
+            <div id="formulario">
+                <h1> Acesso ao Sistema </h1>
+                <h3 th:text="${mensagem}"></h3>
 
-<h1> Acesso ao Sistema </h1>
+                <form action="/login" method="post">
 
-<div id="loginContainer">
-    <h3 th:text="${mensagem}"></h3>
+                    <div class="campo_form">
+                        <label for="login_nome">Nome:</label>
+                        <input id="login_nome" type="text" name="nome" maxlength="50">
+                    </div>
+                    <div class="campo_form">
+                        <label for="login_id">ID:</label>
+                        <input id="login_id" type="number" name="id" required minlength="5" maxlength="5">
+                    </div>
+                    <div class="campo_form">
+                        <label for="login_password">Password:</label>
+                        <input id="login_password" type="text" name="password" required minlength="8" maxlength="15">
+                    </div>
 
-    <form action="/login" method="post">
-
-        <div class="campo-form">
-            Nome:
-            <br>
-            <input type="text" name="nome">
-            <br><br>
-
-            ID Bibliotecário:
-            <br>
-            <input type="number" name="id_bibliotecario">
-            <br><br>
-
-            Password:
-            <br>
-            <input type="text" name="password">
-            <br><br>
-
-            <button type ="submit"> Entrar </button>
-        </div>
-
-
-    </form>
-</div>
-
+                    <button id="button_entrar" type ="submit"> Entrar </button>
+                </form>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
