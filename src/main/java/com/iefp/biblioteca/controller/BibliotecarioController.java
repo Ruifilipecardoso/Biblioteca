@@ -14,16 +14,16 @@ import java.util.List;
 public class BibliotecarioController {
     private List<Bibliotecario> bibliotecario = new ArrayList<>();
 
-    @GetMapping("/login")
-    public String mostrarLogin(Model model){
+    @GetMapping("/registoBibliotecario")
+    public String fazerRegistoBibliotecario(Model model){
         model.addAttribute("bibliotecarios", bibliotecario);
-        return "login";
+        return "registoBibliotecario";
     }
 
-    @PostMapping("/login")
-    public String fazerLogin(@RequestParam String nome, @RequestParam int id_bibliotecario,
+    @PostMapping("/registoBibliotecario")
+    public String fazerRegistoBibliotecario(@RequestParam String nome, @RequestParam int id_bibliotecario,
                                     @RequestParam String password){
         bibliotecario.add(new Bibliotecario(nome, id_bibliotecario, password));
-        return "redirect:/login";
+        return "redirect:/registoBibliotecario";
     }
 }
