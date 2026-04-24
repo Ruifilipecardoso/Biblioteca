@@ -17,15 +17,16 @@
 <main>
   <section id="registo_bibliotecario">
     <div id="acima_formulario">
-      <h1> Acesso ao Sistema </h1>
+      <h1> Registar Novo Bibliotecário </h1>
       <h3 th:text="${mensagem}"></h3>
+      <div id="imagem_perfile"></div>
     </div>
     <div id="formulario">
       <form action="/registoBibliotecario" method="post">
 
         <div class="campo_form">
           <label for="registo_bibliotecario_nome">Nome</label>
-          <input id="registo_bibliotecario_nome" type="text" name="nome" maxlength="50">
+          <input id="registo_bibliotecario_nome" type="text" name="nome" required maxlength="50">
         </div>
         <div class="campo_form">
           <label for="registo_bibliotecario_id">ID</label>
