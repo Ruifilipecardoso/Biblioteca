@@ -34,11 +34,12 @@ div#acima_formulario {
     width: 100%;
     height: 45%;
     border-bottom: 2px solid #999999;
-    box-shadow: 0px 10px 15px 10px rgba(230, 230, 230, 1) inset;
+    box-shadow: 0px 10px 15px 8px rgba(200, 180, 160, 0.600) inset;
 }
 
 div#acima_formulario > h1 {
     text-align: center;
+    color: #3d200f;
     margin-bottom: 10px;
 }
 
@@ -49,11 +50,12 @@ div#acima_formulario > div#imagem_perfile {
     height: 200px;
     border-radius: 50%;
     box-shadow: 0px 0px 20px 10px rgba(150, 150, 150, 0.500) inset;
+    filter: sepia(0.5) brightness(.95);
 }
 
 form {
     background-color: #dddddd;
-    box-shadow: 0px -165px 15px 30px rgba(240, 240, 240, 1) inset;
+    box-shadow: 0px -175px 15px 10px rgba(200, 180, 160, 0.600) inset;
     /*border: 2px solid #bbbbbb;*/
     display: flex;
     flex-direction: column;
@@ -75,7 +77,7 @@ form > div.campo_form {
    width: 80%;
    height: 15%;
    /*margin-bottom: 10px;*/
-   padding: 5px;
+   padding: 15px;
    border-bottom: 2px solid #999999;
    border-left: 2px solid #999999;
    border-right: 2px solid #999999;
@@ -106,6 +108,7 @@ div.campo_form > input {
 div.campo_form > label {
     text-align: center;
     font-weight: bold;
+    color: #3d200f;
     width: 80px;
     height: 20px;
 }
