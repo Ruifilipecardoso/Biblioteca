@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-section#registo_bibliotecario {
+section#login {
     position: absolute;
 
     top: 50%;
@@ -18,7 +18,7 @@ section#registo_bibliotecario {
     box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.500);
 }
 
-section#registo_bibliotecario> div#acima_formulario {
+section#login > div#acima_formulario {
     display: block;
     width: 100%;
     height: 25%;
@@ -30,10 +30,9 @@ div#acima_formulario > h1 {
     margin-bottom: 10px;
 }
 
-section#registo_bibliotecario > div#formulario {
+section#login > div#formulario {
     display: block;
     width: 100%;
     height: 100%;
     /*padding: 10px;*/
 }
-
