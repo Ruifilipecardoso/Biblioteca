@@ -25,16 +25,22 @@
       <form action="/registoBibliotecario" method="post">
 
         <div class="campo_form">
-          <label for="registo_bibliotecario_nome">Nome</label>
-          <input id="registo_bibliotecario_nome" type="text" name="nome" required maxlength="50">
+          <div class="writing_area">
+            <label for="registo_bibliotecario_nome">Nome</label>
+            <input id="registo_bibliotecario_nome" type="text" name="nome" required maxlength="50" placeholder="Nome">
+          </div>
         </div>
         <div class="campo_form">
-          <label for="registo_bibliotecario_id">ID</label>
-          <input id="registo_bibliotecario_id" type="number" name="id" required minlength="5" maxlength="5">
+          <div class="writing_area">
+            <label for="registo_bibliotecario_id">ID</label>
+            <input id="registo_bibliotecario_id" type="number" name="id" required minlength="5" maxlength="5" placeholder="    Identificação">
+          </div>
         </div>
         <div class="campo_form" id="form_password">
-          <label for="registo_bibliotecario_password">Password</label>
-          <input id="registo_bibliotecario_password" type="text" name="password" required minlength="8" maxlength="15">
+          <div class="writing_area">
+            <label for="registo_bibliotecario_password">Password</label>
+            <input id="registo_bibliotecario_password" type="text" name="password" required minlength="8" maxlength="15" placeholder="Password">
+          </div>
         </div>
 
         <button id="button_registar" type ="submit"> Registar </button>

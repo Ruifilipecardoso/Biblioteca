@@ -38,7 +38,7 @@ form > button#button_registar {
     border-bottom: 2px solid #999999;
     border-left: 2px solid #999999;
     border-right: 2px solid #999999;
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 0px 0px 50% 50%;
     box-shadow: 0px -30px 20px -10px rgba(240, 240, 240, 1) inset, 0px 30px 20px -10px rgba(240, 240, 240, 1) inset;
     cursor: pointer;
     font-family: inherit;
