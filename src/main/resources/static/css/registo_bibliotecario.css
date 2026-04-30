@@ -1,29 +1,5 @@
 @charset "UTF-8";
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-body, html {
-    background-color: #9e5429;
-    height: 100vh;
-    width: 100vw;
-}
-
-body {
-    background: url('../imgs/bibliotecas.png') no-repeat center center fixed;
-    background-size: cover;
-}
-
-main {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-}
-
 section#registo_bibliotecario {
     position: absolute;
 
@@ -37,21 +13,9 @@ section#registo_bibliotecario {
     background-color: white;
     width: 75vw;
     max-width: 1000px;
-    height: 600px;
+    height: 750px;
     border-radius: 20px;
     box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.500);
-}
-
-section#registo_bibliotecario> div#acima_formulario {
-    display: block;
-    width: 100%;
-    height: 25%;
-    border-bottom: 2px solid #999999;
-}
-
-div#acima_formulario > h1 {
-    text-align: center;
-    margin-bottom: 10px;
 }
 
 section#registo_bibliotecario > div#formulario {
@@ -61,61 +25,30 @@ section#registo_bibliotecario > div#formulario {
     /*padding: 10px;*/
 }
 
-form {
-    background-color: #dddddd;
-    box-shadow: 0px -30px 15px 30px rgba(240, 240, 240, 1) inset;
-    /*border: 2px solid #bbbbbb;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 77%;
-    /*border-radius: 0px 0px 8px 8px;*/
-    margin: 0px;
-    text-align: center;
-    overflow: hidden;
+form > div#form_password {
+    border-radius: 0px 0px 8px 8px;
 }
 
-form > div.campo_form {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   gap: 10px;
-   width: 80%;
-   height: 20%;
-   /*margin-bottom: 10px;*/
-   padding: 5px;
-   border-bottom: 2px solid #999999;
-   border-left: 2px solid #999999;
-   border-right: 2px solid #999999;
-   box-shadow: 0px -30px 20px -10px rgba(240, 240, 240, 1) inset, 0px 30px 20px -10px rgba(240, 240, 240, 1) inset
-}
-
-form > div.campo_form:hover {
+form > button#button_registar {
+    background: transparent;
+    width: 60%;
+    height: 15%;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid #999999;
+    border-left: 2px solid #999999;
+    border-right: 2px solid #999999;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0px -30px 20px -10px rgba(240, 240, 240, 1) inset, 0px 30px 20px -10px rgba(240, 240, 240, 1) inset;
     cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 20px;
+    color: #3d200f;
+}
+
+form > button#button_registar:hover {
     background-color: rgb(240, 240, 240);
     box-shadow: 0px 0px 20px 10px rgba(200, 200, 200, 1) inset;
 }
 
-div.campo_form > input {
-    font-size: 1em;
-    width: 50%;
-    height: 40px;
-    border: none;
-    border-bottom: 2px solid #999999;
-    border-radius: 0px;
-    background: transparent;
-    padding: 4px;
-    outline: none;
-    /*transform: translateY(50%);*/
-}
-
-
-
-div.campo_form > label {
-    text-align: center;
-    font-weight: bold;
-    width: 80px;
-    height: 20px;
-}
