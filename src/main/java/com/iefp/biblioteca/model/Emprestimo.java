@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,7 +30,7 @@ public class Emprestimo {
     private Aluno aluno; */
 
     @OneToMany
-    private Livro livro;
+    private List<Livro> livros;
 
    /* @OneToOne
     private Devolucao devolucao; */
