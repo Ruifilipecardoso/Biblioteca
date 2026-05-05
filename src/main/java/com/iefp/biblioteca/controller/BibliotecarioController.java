@@ -28,7 +28,7 @@ public class BibliotecarioController {
     }
 
     @PostMapping("/registoBibliotecario")
-    public String fazerRegistoBibliotecario(@RequestParam String nome, @RequestParam int id_bibliotecario,
+    public String fazerRegistoBibliotecario(@RequestParam String nome, @RequestParam String id_bibliotecario,
                                     @RequestParam String password){
        Bibliotecario bibliotecario= new Bibliotecario(null, nome, id_bibliotecario, password, null);
         bibliotecarioService.guardar(bibliotecario);

@@ -29,8 +29,8 @@
           <input id="registo_bibliotecario_nome" type="text" name="nome" required maxlength="50">
         </div>
         <div class="campo_form">
-          <label for="registo_bibliotecario_id">ID</label>
-          <input id="registo_bibliotecario_id" type="number" name="id_bibliotecario" required minlength="5" maxlength="5">
+          <label for="registo_bibliotecario_id">Identificação</label>
+          <input id="registo_bibliotecario_id" type="text" name="id_bibliotecario" required minlength="5" maxlength="5" placeholder="00000" inputmode="numeric" pattern="\d{5}" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
         </div>
         <div class="campo_form" id="form_password">
           <label for="registo_bibliotecario_password">Password</label>

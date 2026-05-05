@@ -17,7 +17,7 @@ public class Bibliotecario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private int id_bibliotecario;
+    private String id_bibliotecario;
     private String password;
 
     @OneToMany(mappedBy = "bibliotecario")

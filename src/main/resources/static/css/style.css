@@ -54,14 +54,13 @@ div#acima_formulario > div#imagem_perfile {
 }
 
 form {
-    background-color: #dddddd;
-    box-shadow: 0px -175px 15px 10px rgba(200, 180, 160, 0.600) inset;
+    /*background-color: #dddddd;*/
     /*border: 2px solid #bbbbbb;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 77%;
+    height: 100%;
     /*border-radius: 0px 0px 8px 8px;*/
     margin: 0px;
     text-align: center;
@@ -75,40 +74,48 @@ form > div.campo_form {
    justify-content: center;
    gap: 10px;
    width: 80%;
-   height: 15%;
+   height: 20%;
    /*margin-bottom: 10px;*/
-   padding: 15px;
+   padding: 15px 0px;
+   margin: 0 auto;
    border-bottom: 2px solid #999999;
-   border-left: 2px solid #999999;
-   border-right: 2px solid #999999;
-   box-shadow: 0px -30px 20px -10px rgba(240, 240, 240, 1) inset, 0px 30px 20px -10px rgba(240, 240, 240, 1) inset
+
+   /*box-shadow: 0px -10px 0px -5px rgba(240, 240, 240, 0.5) inset;*/
 }
 
-form > div.campo_form:hover {
+/*form > div.campo_form:hover {
     cursor: pointer;
     background-color: rgb(240, 240, 240);
     box-shadow: 0px 0px 20px 10px rgba(200, 200, 200, 1) inset;
-}
+}*/
 
 div.campo_form > input {
     font-size: 1em;
+    text-align: center;
     width: 50%;
-    height: 40px;
-    border: none;
+    height: 50%;
+    border: 1px solid rgba(153, 153, 153, 0.8);
     border-bottom: 2px solid #999999;
-    border-radius: 0px;
+    border-radius: 2px 2px 0px 0px;
     background: transparent;
     padding: 4px;
+    margin: 0 auto;
     outline: none;
     /*transform: translateY(50%);*/
 }
 
 
+div.campo_form > input:focus {
+    background-color: #fefefe;
+}
 
 div.campo_form > label {
+    display: block;
     text-align: center;
     font-weight: bold;
+    font-size: 1.2em;
     color: #3d200f;
-    width: 80px;
-    height: 20px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
 }

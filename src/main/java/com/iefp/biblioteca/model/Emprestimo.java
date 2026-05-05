@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,8 +29,8 @@ public class Emprestimo {
   /*  @ManyToOne
     private Aluno aluno; */
 
-    @OneToMany
-    private Livro livro;
+    @OneToMany(mappedBy = "emprestimo")
+    private List<Livro> livro;
 
    /* @OneToOne
     private Devolucao devolucao; */
