@@ -26,7 +26,7 @@ public class EmprestimoController {
 
     @PostMapping
     public String adicionarEmprestimo(@RequestParam Long id, @RequestParam LocalDate data, @RequestParam LocalTime hora, @RequestParam String estado){
-        Emprestimo emprestimo = new Emprestimo(null, data, hora, estado, null, null);
+        Emprestimo emprestimo = new Emprestimo(null, data, hora, estado, null, null, null, null);
         EmprestimoService.guardar(emprestimo);
         return "redirect:/emprestimos";
     }

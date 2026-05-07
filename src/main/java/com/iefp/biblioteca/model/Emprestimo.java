@@ -26,12 +26,12 @@ public class Emprestimo {
     @ManyToOne
     private Bibliotecario bibliotecario;
 
-  /*  @ManyToOne
-    private Aluno aluno; */
+    @ManyToOne
+    private Aluno aluno;
 
     @OneToMany(mappedBy = "emprestimo")
     private List<Livro> livro;
 
-   /* @OneToOne
-    private Devolucao devolucao; */
+    @OneToOne (mappedBy = "emprestimo")
+    private Devolucao devolucao;
 }
