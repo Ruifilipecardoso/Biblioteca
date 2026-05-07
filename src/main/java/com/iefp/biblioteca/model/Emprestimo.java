@@ -29,8 +29,8 @@ public class Emprestimo {
   /*  @ManyToOne
     private Aluno aluno; */
 
-    @OneToMany
-    private List<Livro> livros;
+    @OneToMany(mappedBy = "emprestimo")
+    private List<Livro> livro;
 
    /* @OneToOne
     private Devolucao devolucao; */
