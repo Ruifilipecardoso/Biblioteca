@@ -2,9 +2,11 @@ package com.iefp.biblioteca.service;
 
 import com.iefp.biblioteca.model.Aluno;
 import com.iefp.biblioteca.repository.AlunoRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AlunoService {
     private final AlunoRepository alunoRepository;
 

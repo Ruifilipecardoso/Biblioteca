@@ -19,6 +19,6 @@ public class Devolucao {
     private LocalDate dataDevolucao;
     private String estado;
 
-    @OneToOne (mappedBy = "devolucao")
+    @OneToOne(mappedBy = "devolucao")
     private Emprestimo emprestimo;
 }
