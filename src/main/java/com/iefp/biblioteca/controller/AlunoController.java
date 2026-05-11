@@ -32,7 +32,7 @@ public class AlunoController {
 
         Aluno aluno = new Aluno(null, nome, numeroAluno, null);
 
-        alunoService.guardar(aluno);
+        alunoService.guardarAluno(aluno);
 
         return "redirect:/alunos";
     }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alunos</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<h1>Alunos da Biblioteca</h1>
+
+<table>
+
+    <tr>
+        <th>Nome</th>
+        <th>Numero do Aluno</th>
+    </tr>
+
+    <tr th:each="aluno : ${listaDeAlunos}">
+
+        <td class="coluna-nome"
+            th:text="${aluno.nome}">
+        </td>
+
+        <td th:text="${aluno.numeroAluno}">
+        </td>
+
+    </tr>
+
+</table>
+
+<h2>Novo Aluno</h2>
+
+<form action="/alunos"
+      method="post">
+
+    <input type="text"
+           name="nome"
+           placeholder="Nome completo">
+
+    <input type="number"
+           name="numeroAluno"
+           placeholder="Numero do aluno">
+
+    <button type="submit">
+        Adicionar
+    </button>
+
+</form>
+
+</body>
+</html>

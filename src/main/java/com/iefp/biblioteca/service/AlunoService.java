@@ -22,6 +22,4 @@ public class AlunoService {
         alunoRepository.save(aluno);
     }
 
-    public void guardar(Aluno aluno) {
-    }
 }
