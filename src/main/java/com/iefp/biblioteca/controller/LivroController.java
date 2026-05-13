@@ -21,7 +21,7 @@ public class LivroController {
     }
 
     @GetMapping("/livros")
-    public String listarLivros(Model model) {
+    public String listarLivros(Model model){
         model.addAttribute("lista", livroService.listarLivros());
         model.addAttribute("emprestimos", emprestimoService.listarEmprestimos());
         return "livros";
