@@ -3,6 +3,7 @@ package com.iefp.biblioteca.controller;
 import com.iefp.biblioteca.model.Bibliotecario;
 import com.iefp.biblioteca.repository.BibliotecaRepository;
 import com.iefp.biblioteca.service.BibliotecarioService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +34,27 @@ public class BibliotecarioController {
        Bibliotecario bibliotecario= new Bibliotecario(null, nome, id_bibliotecario, password, null);
         bibliotecarioService.guardar(bibliotecario);
         return "redirect:/registoBibliotecario";
+    }
+
+    @GetMapping("/login")
+    public String mostrarLogin() {
+        return "login";
+    }
+
+    public String fazerLogin(@RequestParam String id_bibliotecario, @RequestParam String password, HttpSession session, Model model) {
+        Bibliotecario bibliotecario = bibliotecarioService.autenticar(id_bibliotecario, password);
+        if (bibliotecario != null) {
+            session.setAttribute("bibliotecarioLogado", bibliotecario);
+            return "redirect:/";
+        }
+
+        model.addAttribute("erro", "id ou password inválidos");
+        return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();;
+        return "redirect:/login";
     }
 }

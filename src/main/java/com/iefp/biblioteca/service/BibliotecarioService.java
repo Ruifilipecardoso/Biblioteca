@@ -20,4 +20,9 @@ public class BibliotecarioService {
         bibliotecaRepository.save(bibliotecario);
     }
 
+    public Bibliotecario autenticar(String id_bibliotecario, String password){
+        return bibliotecaRepository.findByIdAndPassword(id_bibliotecario, password);
+    }
+
+
 }
