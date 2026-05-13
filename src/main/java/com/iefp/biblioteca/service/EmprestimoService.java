@@ -1,26 +1,45 @@
 package com.iefp.biblioteca.service;
 
+import com.iefp.biblioteca.model.Aluno;
+import com.iefp.biblioteca.model.Bibliotecario;
 import com.iefp.biblioteca.model.Emprestimo;
+import com.iefp.biblioteca.repository.AlunoRepository;
+import com.iefp.biblioteca.repository.BibliotecaRepository;
 import com.iefp.biblioteca.repository.EmprestimoRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmprestimoService {
     private final EmprestimoRepository emprestimoRepository;
-    public EmprestimoService(EmprestimoRepository emprestimoRepository) {
+    private final BibliotecaRepository bibliotecaRepository;
+    private final AlunoRepository alunoRepository;
+
+
+    public EmprestimoService(EmprestimoRepository emprestimoRepository, BibliotecaRepository bibliotecaRepository, AlunoRepository alunoRepository) {
         this.emprestimoRepository = emprestimoRepository;
+        this.bibliotecaRepository = bibliotecaRepository;
+        this.alunoRepository = alunoRepository;
     }
 
-    public static void guardar(Emprestimo emprestimo) {
+    public void guardarEmprestimo(LocalDate data, LocalTime hora, String estado, Long bibliotecarioId, Long alunoId) {
+        Optional <Bibliotecario> bibliotecario = bibliotecaRepository.findById(bibliotecarioId);
+        Optional <Aluno> aluno = alunoRepository.findById(alunoId);
+        Emprestimo emprestimo = new Emprestimo();
+        emprestimo.setData(data);
+        emprestimo.setHora(hora);
+        emprestimo.setEstado(estado);
+        emprestimo.setBibliotecario(bibliotecario.get());
+        emprestimo.setAluno(aluno.get());
+        emprestimoRepository.save(emprestimo);
     }
 
     public List<Emprestimo> listarEmprestimos(){
         return emprestimoRepository.findAll();
     }
 
-    public void guardarEmprestimo(Emprestimo emprestimo){
-        emprestimoRepository.save(emprestimo);
-    }
 }

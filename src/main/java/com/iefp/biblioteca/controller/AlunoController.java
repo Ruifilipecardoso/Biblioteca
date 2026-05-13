@@ -27,8 +27,7 @@ public class AlunoController {
     @PostMapping("/alunos")
     public String adicionarAluno(
             @RequestParam String nome,
-            @RequestParam int numeroAluno
-    ){
+            @RequestParam int numeroAluno) {
 
         Aluno aluno = new Aluno(null, nome, numeroAluno, null);
 
