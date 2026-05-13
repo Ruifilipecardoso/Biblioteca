@@ -1,23 +1,35 @@
 package com.iefp.biblioteca.service;
 
 import com.iefp.biblioteca.model.Devolucao;
+import com.iefp.biblioteca.model.Emprestimo;
 import com.iefp.biblioteca.repository.DevolucaoRepository;
+import com.iefp.biblioteca.repository.EmprestimoRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class DevolucaoService {
     private final DevolucaoRepository devolucaoRepository;
-    public DevolucaoService(DevolucaoRepository devolucaoRepository) {
+    private final EmprestimoRepository emprestimoRepository;
+
+    public DevolucaoService(DevolucaoRepository devolucaoRepository, EmprestimoRepository emprestimoRepository) {
         this.devolucaoRepository = devolucaoRepository;
+        this.emprestimoRepository = emprestimoRepository;
+    }
+
+    public void guardarDevolucao(Long emprestimoId, LocalDate dataDevolucao, String estado){
+        Emprestimo emprestimo = emprestimoRepository.findById(emprestimoId).orElse(null);
+        Devolucao devolucao = new Devolucao();
+        devolucao.setDataDevolucao(dataDevolucao);
+        devolucao.setEstado(estado);
+        devolucao.setEmprestimo(emprestimo);
     }
 
     public List<Devolucao> ListarDevolucao(){
         return devolucaoRepository.findAll();
     }
 
-    public void guardarDevolucao(Devolucao devolucao){
-        devolucaoRepository.save(devolucao);
-    }
+
 }
