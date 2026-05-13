@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emprestimos</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<h1>Histórico de emprestimos</h1>
+
+<table>
+
+    <tr>
+        <th>Emprestimo</th>
+        <th>Id do Emprestimo</th>
+        <th>Nome do Livro</th>
+        <th>Data do Emprestimo</th>
+        <th>Hora do Emprestimo</th>
+        <th>Estado do Emprestimo</th>
+    </tr>
+
+    <tr th:each="emprestimo : ${listaDeEmprestimo}">
+
+        <td
+                th:text="${emprestimo.id}">
+        </td>
+
+        <td th:text="${emprestimo.livro.nome}">
+        </td>
+
+        <td th:text="${emprestimo.data}">
+        </td>
+
+        <td th:text="${emprestimo.hora}">
+        </td>
+
+        <td th:text="${emprestimo.estado}">
+        </td>
+
+    </tr>
+
+</table>
+
+<h2>Novo Emprestimo</h2>
+
+<form action="/emprestimo"
+      method="post">
+
+    <input type="number"
+           name="id"
+           placeholder="Id do emprestimo">
+
+    <input type="text"
+           name="nome"
+           placeholder="Nome do Livro">
+
+    <input type="date"
+           name="data"
+           placeholder="Data do emprestimo">
+
+    <input type="time"
+           name="hora"
+           placeholder="Hora do emprestimo">
+
+    <input type="text"
+           name="estado"
+           placeholder="Estado do emprestimo" placeholder="Estado">
+
+    <button type="submit">
+        Adicionar
+    </button>
+
+</form>
+
+</body>
+</html>

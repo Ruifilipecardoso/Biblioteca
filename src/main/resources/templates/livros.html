@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Livros</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<h1>Livros da Biblioteca</h1>
+
+<table border="1">
+
+    <tr>
+        <th>Título</th>
+        <th>Categoria</th>
+        <th>Autor</th>
+        <th>ISBN</th>
+        <th>Estado</th>
+        <th>Estoque</th>
+    </tr>
+
+    <tr th:each="livro : ${listaDeLivros}">
+
+        <td th:text="${livro.titulo}"></td>
+
+        <td th:text="${livro.categoria}"></td>
+
+        <td th:text="${livro.autor}"></td>
+
+        <td th:text="${livro.isbn}"></td>
+
+        <td th:text="${livro.estado}"></td>
+
+        <td th:text="${livro.estoque}"></td>
+
+    </tr>
+
+</table>
+
+<h2>Novo Livro</h2>
+
+<form action="/livros"
+      method="post">
+
+    <input type="text"
+           name="titulo"
+           placeholder="Título">
+
+    <input type="text"
+           name="categoria"
+           placeholder="Categoria">
+
+    <input type="text"
+           name="autor"
+           placeholder="Autor">
+
+    <input type="number"
+           name="isbn"
+           placeholder="ISBN">
+
+    <input type="text"
+           name="estado"
+           placeholder="Estado">
+
+    <input type="number"
+           name="estoque"
+           placeholder="Estoque">
+
+    <button type="submit">
+        Adicionar
+    </button>
+
+</form>
+
+</body>
+</html>

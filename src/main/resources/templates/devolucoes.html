@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Devoluções</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<h1>Devoluções</h1>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Data Devolução</th>
+        <th>Estado</th>
+    </tr>
+
+    <tr th:each="devolucao : ${lista}">
+
+        <td th:text="${devolucao.id}"></td>
+
+        <td th:text="${devolucao.dataDevolucao}"></td>
+
+        <td th:text="${devolucao.estado}"></td>
+
+    </tr>
+
+</table>
+
+<h2>Nova Devolução</h2>
+
+<form action="/devolucoes"
+      method="post">
+
+    <input type="number"
+           name="emprestimoId"
+           placeholder="ID do empréstimo">
+
+    <input type="text"
+           name="estado"
+           placeholder="Estado">
+
+    <button type="submit">
+        Registar
+    </button>
+
+</form>
+
+</body>
+</html>
