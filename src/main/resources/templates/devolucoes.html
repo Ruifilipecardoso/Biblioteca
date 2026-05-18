@@ -12,7 +12,9 @@
 </head>
 
 <body>
+<section>
 
+    <div id = "acima_formulario">
 <h1>Devoluções</h1>
 
 <table border="1">
@@ -34,25 +36,33 @@
     </tr>
 
 </table>
+    </div>
 
+    <div id ="formulario">
 <h2>Nova Devolução</h2>
 
 <form action="/devolucoes"
       method="post">
 
+    <div class = "campo_form">
     <input type="number"
            name="emprestimoId"
            placeholder="ID do empréstimo">
+    </div>
 
+    <div class = "campo_form">
     <input type="text"
            name="estado"
            placeholder="Estado">
+    </div>
 
     <button type="submit">
         Registar
     </button>
 
 </form>
+    </div>
+</section>
 
 </body>
 </html>

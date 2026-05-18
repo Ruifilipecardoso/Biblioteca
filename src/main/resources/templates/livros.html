@@ -13,6 +13,10 @@
 
 <body>
 
+<section>
+
+    <div id = "acima_formulario">
+
 <h1>Livros da Biblioteca</h1>
 
 <table border="1">
@@ -43,41 +47,58 @@
     </tr>
 
 </table>
+    </div>
+
+    <div id ="formulario">
 
 <h2>Novo Livro</h2>
 
 <form action="/livros"
       method="post">
 
+    <div class = "campo_form">
     <input type="text"
            name="titulo"
            placeholder="Título">
+    </div>
 
+    <div class = "campo_form">
     <input type="text"
            name="categoria"
            placeholder="Categoria">
+    </div>
 
+    <div class = "campo_form">
     <input type="text"
            name="autor"
            placeholder="Autor">
+    </div>
 
+    <div class = "campo_form">
     <input type="number"
            name="isbn"
            placeholder="ISBN">
+    </div>
 
+    <div class = "campo_form">
     <input type="text"
            name="estado"
            placeholder="Estado">
+    </div>
 
+    <div class = "campo_form">
     <input type="number"
            name="estoque"
            placeholder="Estoque">
+    </div>
 
     <button type="submit">
         Adicionar
     </button>
 
 </form>
+    </div>
+</section>
 
 </body>
 </html>

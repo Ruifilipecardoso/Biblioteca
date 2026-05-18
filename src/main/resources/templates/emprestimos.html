@@ -12,6 +12,10 @@
 
 <body>
 
+<section>
+
+    <div id = "acima_formulario">
+
 <h1>Histórico de emprestimos</h1>
 
 <table>
@@ -46,37 +50,52 @@
     </tr>
 
 </table>
+        </div>
 
+    <div id ="formulario">
 <h2>Novo Emprestimo</h2>
 
 <form action="/emprestimos"
       method="post">
 
+    <div class = "campo_form">
     <input type="number"
            name="id"
            placeholder="Id do emprestimo">
+    </div>
 
+    <div class = "campo_form">
     <input type="text"
            name="nome"
            placeholder="Nome do Livro">
+    </div>
 
+    <div class = "campo_form">
     <input type="date"
            name="data"
            placeholder="Data do emprestimo">
+    </div>
 
+    <div class = "campo_form">
     <input type="time"
            name="hora"
            placeholder="Hora do emprestimo">
+    </div>
 
+    <div class = "campo_form">
     <input type="text"
            name="estado"
            placeholder="Estado do emprestimo">
+    </div>
 
     <button type="submit">
         Adicionar
     </button>
 
 </form>
+
+    </div>
+</section>
 
 </body>
 </html>
