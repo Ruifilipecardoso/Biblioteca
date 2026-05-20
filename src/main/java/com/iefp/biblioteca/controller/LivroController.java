@@ -1,8 +1,10 @@
 package com.iefp.biblioteca.controller;
 
+import com.iefp.biblioteca.model.Bibliotecario;
 import com.iefp.biblioteca.model.Livro;
 import com.iefp.biblioteca.service.EmprestimoService;
 import com.iefp.biblioteca.service.LivroService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,7 +23,14 @@ public class LivroController {
     }
 
     @GetMapping("/livros")
-    public String listarLivros(Model model){
+    public String listarLivros(Model model, HttpSession session){
+        Bibliotecario bibliotecario = (Bibliotecario) session.getAttribute("bibliotecarioLogado");
+
+        if (bibliotecario == null) {
+            return "redirect:/login";
+        }
+
+        model.addAttribute("bibliotecario", bibliotecario);
         model.addAttribute("lista", livroService.listarLivros());
         model.addAttribute("emprestimos", emprestimoService.listarEmprestimos());
         return "livros";

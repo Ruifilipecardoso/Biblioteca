@@ -1,9 +1,11 @@
 package com.iefp.biblioteca.controller;
 
+import com.iefp.biblioteca.model.Bibliotecario;
 import com.iefp.biblioteca.model.Devolucao;
 import com.iefp.biblioteca.repository.DevolucaoRepository;
 import com.iefp.biblioteca.service.DevolucaoService;
 import com.iefp.biblioteca.service.EmprestimoService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +26,14 @@ public class DevolucaoController {
     }
 
     @GetMapping("/devolucoes")
-    public String listarDevolucao(Model model) {
+    public String listarDevolucao(Model model, HttpSession session) {
+        Bibliotecario bibliotecario = (Bibliotecario) session.getAttribute("bibliotecarioLogado");
+
+        if (bibliotecario == null) {
+            return "redirect:/login";
+        }
+
+        model.addAttribute("bibliotecario", bibliotecario);
         model.addAttribute("lista", devolucaoService.ListarDevolucao());
         model.addAttribute("emprestimos", emprestimoService.listarEmprestimos());
         return "devolucoes";

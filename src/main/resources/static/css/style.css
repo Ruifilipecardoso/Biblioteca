@@ -5,13 +5,14 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    overflow: hidden;
+
 }
 
 body, html {
     background-color: #9e5429;
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
