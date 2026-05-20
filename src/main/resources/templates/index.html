@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Biblioteca</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
 </head>
+
 <body>
-<div class="cards">
-  <a class="card" href="/alunos" >Gerir Alunos</a>
-  <a class="card" href="/livros">Gerir Livros</a>
-  <a class="card" href="/emprestimos">Gerir Emprestimos</a>
-  <a class="card" href="/devolucoes">Gerir Devoluções</a>
-  <a class="card" href="/logout">Sair</a>
+
+<div class="home-container">
+
+    <h1>Sistema de Biblioteca</h1>
+
+    <p>Escolhe uma opção para continuar</p>
+
+    <div class="menu">
+
+        <a href="/alunos">Alunos</a>
+        <a href="/livros">Livros</a>
+        <a href="/emprestimos">Empréstimos</a>
+        <a href="/devolucoes">Devoluções</a>
+        <a href="/registoBibliotecario">Bibliotecários</a>
+
+    </div>
+
 </div>
+
 </body>
 </html>
