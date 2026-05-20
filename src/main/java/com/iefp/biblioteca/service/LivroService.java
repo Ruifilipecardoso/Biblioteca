@@ -12,15 +12,12 @@ import java.util.List;
 @Service
 public class LivroService {
     private final LivroRepository livroRepository;
-    private final EmprestimoRepository emprestimoRepository;
 
     public LivroService(LivroRepository livroRepository, EmprestimoRepository emprestimoRepository) {
         this.livroRepository = livroRepository;
-        this.emprestimoRepository = emprestimoRepository;
     }
 
-    public void guardarLivro(String titulo, String categoria, String autor, Integer isbn, String estado, Integer estoque, Long emprestimoId) {
-        Emprestimo emprestimo = emprestimoRepository.findById(emprestimoId).orElse(null);
+    public void guardarLivro(String titulo, String categoria, String autor, Integer isbn, String estado, Integer estoque) {
         Livro livro = new Livro();
         livro.setTitulo(titulo);
         livro.setCategoria(categoria);

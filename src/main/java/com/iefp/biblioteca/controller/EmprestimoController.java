@@ -43,8 +43,8 @@ public class EmprestimoController {
     }
 
     @PostMapping("/emprestimos")
-    public String adicionarEmprestimo(LocalDate data, LocalTime hora, String estado, Long bibliotecarioId, Long alunoId){
-        emprestimoService.guardarEmprestimo(data, hora, estado, bibliotecarioId, alunoId);
+    public String adicionarEmprestimo(LocalDate data, LocalTime hora, String estado, Long bibliotecarioId, Long alunoId, Long livroId){
+        emprestimoService.guardarEmprestimo(data, hora, estado, bibliotecarioId, alunoId, livroId);
         return "redirect:/emprestimos";
     }
 

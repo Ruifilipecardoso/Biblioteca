@@ -15,11 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LivroController {
     private final LivroService livroService;
-    private final EmprestimoService emprestimoService;
 
     public LivroController(LivroService livroService, LivroService livroService1, EmprestimoService emprestimoService) {
         this.livroService = livroService;
-        this.emprestimoService = emprestimoService;
     }
 
     @GetMapping("/livros")
@@ -32,13 +30,12 @@ public class LivroController {
 
         model.addAttribute("bibliotecario", bibliotecario);
         model.addAttribute("lista", livroService.listarLivros());
-        model.addAttribute("emprestimos", emprestimoService.listarEmprestimos());
         return "livros";
     }
 
     @PostMapping("/livros")
-    public String adicionarLivro(String titulo, String categoria, String autor, Integer isbn, String estado, Integer estoque, Long emprestimoId) {
-        livroService.guardarLivro(titulo, categoria, autor, isbn, estado, estoque, emprestimoId);
+    public String adicionarLivro(String titulo, String categoria, String autor, Integer isbn, String estado, Integer estoque) {
+        livroService.guardarLivro(titulo, categoria, autor, isbn, estado, estoque);
         return "redirect:/livros";
     }
 
