@@ -26,6 +26,31 @@ main {
     width: 100vw;
 }
 
+header {
+    height: 8%;
+    background-color: #9e5429;
+    padding-top: 10px;
+    text-align: center;
+}
+
+header > nav {
+    text-align: center;
+    margin: auto;
+}
+
+header > nav > a.link {
+    margin: 0px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+header > nav > a.link:hover {
+
+    text-decoration: underline;
+
+}
+
 section {
     position: absolute;
 
