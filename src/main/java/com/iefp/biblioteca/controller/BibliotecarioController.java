@@ -16,6 +16,7 @@ import java.util.List;
 @Controller
 public class BibliotecarioController {
     private final BibliotecarioService bibliotecarioService;
+
     public BibliotecarioController(BibliotecarioService bibliotecaService){
         this.bibliotecarioService = bibliotecaService;
     }
@@ -33,7 +34,7 @@ public class BibliotecarioController {
                                     @RequestParam String password){
        Bibliotecario bibliotecario= new Bibliotecario(null, nome, id_bibliotecario, password, null);
         bibliotecarioService.guardar(bibliotecario);
-        return "redirect:/registoBibliotecario";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
@@ -41,6 +42,7 @@ public class BibliotecarioController {
         return "login";
     }
 
+    @PostMapping("/login")
     public String fazerLogin(@RequestParam String id_bibliotecario, @RequestParam String password, HttpSession session, Model model) {
         Bibliotecario bibliotecario = bibliotecarioService.autenticar(id_bibliotecario, password);
         if (bibliotecario != null) {

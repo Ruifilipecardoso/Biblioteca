@@ -154,6 +154,18 @@ div.campo_form > label {
     padding: 0;
 }
 
+div.card {
+    background-color: white;
+    border: 1px solid #999;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    text-decoration: none;
+    color: #0b5394;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
 form > button {
 
     width: 70%;
