@@ -25,6 +25,8 @@ public class DevolucaoService {
         devolucao.setDataDevolucao(dataDevolucao);
         devolucao.setEstado(estado);
         devolucao.setEmprestimo(emprestimo);
+
+        devolucaoRepository.save(devolucao);
     }
 
     public List<Devolucao> ListarDevolucao(){
